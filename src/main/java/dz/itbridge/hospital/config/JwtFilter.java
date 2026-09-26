@@ -72,8 +72,8 @@ public class JwtFilter extends OncePerRequestFilter {
 
     List<String> extractRoles(Claims claims) {
         Object rolesObject = claims.get(MessageUtils.ROLE_TXT);
-        if (rolesObject instanceof List<?>) {
-            return ((List<?>) rolesObject).stream()
+        if (rolesObject instanceof List<?> roloes) {
+            return roloes.stream()
                     .map(Object::toString)
                     .collect(Collectors.toList());
         }
